@@ -1,0 +1,35 @@
+***
+The dataset used in this project is not included in this repository.
+
+It was provided for academic use as part of the Network Theory course and is therefore not publicly redistributed. Additionally, the dataset is relatively large and exceeds recommended repository size limits.
+
+To run the project, place the dataset file in the /data directory with the expected filename.
+***
+
+Dataset Structure
+
+The data originates from the Weibo social network and contains information cascades representing message reshare propagation.
+
+Each line corresponds to a single message and has the following format:
+<message_id> <user_id> <publish_time> <retweet_count> <retweet_paths>
+***
+
+Field description
+
+message_id — unique identifier of the original message
+user_id — ID of the root user who posted the message
+publish_time — Unix timestamp of the original post
+retweet_count — total number of reshares within 24 hours
+retweet_paths — propagation paths of reshares
+
+Each retweet path encodes the full diffusion path followed by the information, ending with the retweet timestamp:
+user1/user2/.../userN:retweet_time
+
+This structure allows reconstruction of the full cascade tree and extraction of structural and temporal diffusion features.
+***
+
+Usage Note
+
+The implementation assumes the dataset follows exactly this format.
+If a different dataset is used, the parsing logic may need to be adapted.
+***
